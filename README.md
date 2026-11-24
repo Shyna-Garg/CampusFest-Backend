@@ -4,16 +4,16 @@ A REST API backend for **CampusFest**, a campus event platform designed to suppo
 
 ## Features
 
-- **Authentication** — User authentication with JWT-based authorization and password hashing.
-- **Event management** — API endpoints for managing campus events.
-- **Registrations** — Dedicated endpoints for event registration workflows.
-- **Product management** — Product-related API endpoints and validation.
-- **Shopping cart** — Cart management functionality.
-- **Order management** — Order processing, inventory handling, and cancellation workflows.
-- **Payment safeguards** — Cash on Delivery (COD) support, with unverified online payment methods rejected.
-- **Image uploads** — ImageKit integration with upload middleware.
-- **Security and configuration** — Environment-based configuration, CORS controls, and centralized error handling.
-- **Automated tests** — Node.js test runner, including inventory, payment, authentication, validation, and transaction integration tests.
+- **Authentication** - User authentication with JWT-based authorization and password hashing.
+- **Event management** - API endpoints for managing campus events.
+- **Registrations** - Dedicated endpoints for event registration workflows.
+- **Product management** - Product-related API endpoints and validation.
+- **Shopping cart** - Cart management functionality.
+- **Order management** - Order processing, inventory handling, and cancellation workflows.
+- **Payment safeguards** - Cash on Delivery (COD) support, with unverified online payment methods rejected.
+- **Image uploads** - ImageKit integration with upload middleware.
+- **Security and configuration** - Environment-based configuration, CORS controls, and centralized error handling.
+- **Automated tests** - Node.js test runner, including inventory, payment, authentication, validation, and transaction integration tests.
 
 ## Tech Stack
 
