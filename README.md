@@ -1,62 +1,64 @@
 # CampusFest Backend
 
-A REST API backend for **CampusFest**, a campus event platform designed to support event management, user authentication, registrations, product browsing, shopping carts, and order processing.
+A REST API backend for **CampusFest**, a campus event platform that supports user authentication, event management, event registrations, product browsing, shopping carts, and order processing.
 
 ## Features
 
-- **Authentication** - User authentication with JWT-based authorization and password hashing.
-- **Event management** - API endpoints for managing campus events.
-- **Registrations** - Dedicated endpoints for event registration workflows.
-- **Product management** - Product-related API endpoints and validation.
-- **Shopping cart** - Cart management functionality.
-- **Order management** - Order processing, inventory handling, and cancellation workflows.
-- **Payment safeguards** - Cash on Delivery (COD) support, with unverified online payment methods rejected.
-- **Image uploads** - ImageKit integration with upload middleware.
-- **Security and configuration** - Environment-based configuration, CORS controls, and centralized error handling.
-- **Automated tests** - Node.js test runner, including inventory, payment, authentication, validation, and transaction integration tests.
+- **User Authentication:** JWT-based authentication, password hashing, and profile management.
+- **Event Management:** Create, retrieve, update, and delete campus events.
+- **Event Registrations:** Event registration workflows and team-size validation.
+- **Product Management:** Product APIs, validation, and image uploads.
+- **Shopping Cart:** Add, retrieve, update, and remove cart items.
+- **Order Management:** Order processing, inventory handling, and cancellation workflows.
+- **Payment Safeguards:** Cash on Delivery (COD) support; unverified online payment methods are rejected.
+- **Image Storage:** ImageKit integration for image uploads.
+- **Security:** Environment-based configuration, CORS controls, and centralized error handling.
+- **Automated Testing:** Tests covering authentication, validation, inventory, payment restrictions, and order transaction behaviour.
 
 ## Tech Stack
 
-- **Runtime:** Node.js
-- **Backend:** Express.js
-- **Database:** MongoDB with Mongoose
-- **Authentication:** JSON Web Tokens (JWT), bcryptjs
-- **Middleware:** CORS, cookie-parser, Multer
-- **Image storage:** ImageKit
-- **Testing:** Node.js built-in test runner, mongodb-memory-server
+| Category | Technologies |
+|---|---|
+| Runtime | Node.js |
+| Backend | Express.js |
+| Database | MongoDB, Mongoose |
+| Authentication | JSON Web Tokens (JWT), bcryptjs |
+| Middleware | CORS, cookie-parser, Multer |
+| Image Storage | ImageKit |
+| Testing | Node.js built-in test runner, mongodb-memory-server |
 
 ## Getting Started
 
 ### Prerequisites
 
-Install the following before running the project:
+Install or configure the following:
 
 - Node.js and npm
-- MongoDB connection URI
+- A MongoDB connection URI
 - ImageKit credentials if using image upload functionality
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Shyna-Garg/CampusFest-Backend.git
 cd CampusFest-Backend
 ```
 
-### 2. Install dependencies
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Configure environment variables
+### 3. Configure Environment Variables
 
-Create a local `.env` file from the example:
+Create a local `.env` file using the example configuration:
 
 ```bash
 cp .env.example .env
 ```
 
-Update `.env` with the appropriate values:
+Update `.env` with the appropriate values for your environment:
 
 ```env
 PORT=3000
@@ -69,9 +71,9 @@ IMAGE_PRIVATE_KEY=your_imagekit_private_key
 IMAGE_URL_ENDPOINT=your_imagekit_url_endpoint
 ```
 
-**Security:** Never commit `.env` or expose database credentials, JWT secrets, or private API keys. The repository's `.gitignore` excludes local environment files.
+Use actual credentials only in your local `.env` file. Never commit database credentials, JWT secrets, private API keys, or other sensitive information. The repository's `.gitignore` excludes local environment files.
 
-### 4. Start the server
+### 4. Start the Server
 
 ```bash
 node server.js
@@ -79,7 +81,7 @@ node server.js
 
 The default port is `3000`, unless overridden by the `PORT` environment variable.
 
-### 5. Run tests
+### 5. Run Automated Tests
 
 ```bash
 npm test
@@ -102,25 +104,44 @@ CampusFest-Backend/
 │   ├── models/
 │   ├── routes/
 │   └── utils/
-└── test/
+├── test/
+└── docs/
+    ├── API.md
+    └── postman/
+        └── CampusFest Backend API.postman_collection.json
 ```
 
-## API Overview
+## API Documentation
 
-The backend organizes endpoints into route modules for:
+Detailed API documentation is available in [`docs/API.md`](docs/API.md).
+
+The documentation covers the available route groups:
 
 - Authentication
 - Events
 - Registrations
 - Products
-- Cart
+- Shopping Cart
 - Orders
 
-For exact endpoint paths, HTTP methods, request payloads, and response formats, refer to the route and controller files in `src/`.
+## Postman Collection
+
+The exported Postman collection is available here:
+
+[`CampusFest Backend API.postman_collection.json`](docs/postman/CampusFest%20Backend%20API.postman_collection.json)
+
+To use it:
+
+1. Import the JSON file into Postman.
+2. Set the collection variable `baseUrl` to `http://localhost:3000`.
+3. Start the backend server.
+4. Authenticate before using protected endpoints.
+
+Keep passwords, tokens, and other secrets out of shared collections.
 
 ## Testing and Reliability
 
-The test suite covers authentication, CORS behaviour, product validation, payment restrictions, inventory updates, and order transaction rollback scenarios.
+The automated test suite covers authentication, CORS behaviour, product validation, payment restrictions, inventory updates, and order transaction rollback scenarios.
 
 Run the tests locally before submitting changes:
 
@@ -130,11 +151,11 @@ npm test
 
 ## Current Scope
 
-This repository contains the backend implementation and automated tests. A deployed production API, frontend integration, and verified online payment processing should not be assumed unless separately configured and tested.
+This repository contains the backend implementation, API documentation, Postman collection, and automated tests. A deployed production API, completed frontend integration, and verified online payment processing should not be assumed unless separately configured and tested.
 
 ## Author
 
 **Shyna Garg**
 
-- GitHub: [@Shyna-Garg](https://github.com/Shyna-Garg)
-- Repository: [CampusFest-Backend](https://github.com/Shyna-Garg/CampusFest-Backend)
+- GitHub: [Shyna-Garg](https://github.com/Shyna-Garg)
+- Repository: [CampusFest Backend](https://github.com/Shyna-Garg/CampusFest-Backend)
