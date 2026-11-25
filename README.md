@@ -47,7 +47,14 @@ flowchart TD
 
     B --> R["Error Handler"]
 ```
+## Live API
 
+The CampusFest backend is deployed on Render.
+
+- **Base URL:** `YOUR_RENDER_URL`
+- **Events API:** `YOUR_RENDER_URL/api/events`
+
+The Events API returns event data in JSON format. Protected endpoints require authentication, and admin-only endpoints require the appropriate role.
 
 ## Tech Stack
 
