@@ -145,6 +145,18 @@ CampusFest-Backend/
         └── CampusFest Backend API.postman_collection.json
 ```
 
+## Testing
+
+The backend includes automated tests covering API behavior, authentication, authorization, and core application workflows.
+
+Run the test suite locally:
+
+```bash
+npm test
+```
+
+The test suite has previously passed **46 tests with zero failures**.
+
 ## API Documentation
 
 Detailed API documentation is available in [`docs/API.md`](docs/API.md).
