@@ -15,6 +15,40 @@ A REST API backend for **CampusFest**, a campus event platform that supports use
 - **Security:** Environment-based configuration, CORS controls, and centralized error handling.
 - **Automated Testing:** Tests covering authentication, validation, inventory, payment restrictions, and order transaction behaviour.
 
+## Architecture
+
+```mermaid
+flowchart TD
+    A["Frontend / Postman"] --> B["Express App<br/>src/app.js"]
+    B --> C["CORS, JSON & Cookie Middleware"]
+    C --> D["Six Route Modules"]
+
+    D --> E["Auth"]
+    D --> F["Events"]
+    D --> G["Registrations"]
+    D --> H["Products"]
+    D --> I["Cart"]
+    D --> J["Orders"]
+
+    E --> K["Controllers"]
+    F --> K
+    G --> K
+    H --> K
+    I --> K
+    J --> K
+
+    K --> L["Mongoose Models"]
+    L --> M[("MongoDB")]
+
+    N["Auth Middleware"] -. "Protected routes" .-> D
+    O["Admin Middleware"] -. "Admin-only routes" .-> D
+    P["Upload Middleware"] -. "Product image creation" .-> H
+    Q["ImageKit Config"] -. "Image service configuration" .-> H
+
+    B --> R["Error Handler"]
+```
+
+
 ## Tech Stack
 
 | Category | Technologies |
