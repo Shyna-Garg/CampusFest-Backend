@@ -153,6 +153,18 @@ npm test
 
 This repository contains the backend implementation, API documentation, Postman collection, and automated tests. A deployed production API, completed frontend integration, and verified online payment processing should not be assumed unless separately configured and tested.
 
+## API Documentation
+
+Detailed API documentation is available in [`docs/API.md`](docs/API.md).
+
+## Postman Collection
+
+Import the exported collection into Postman to explore the available API requests.
+
+[CampusFest Backend API Collection](docs/postman/CampusFest%20Backend%20API.postman_collection.json)
+
+Set the collection variable `baseUrl` to `http://localhost:3000` before using the requests.
+
 ## Author
 
 **Shyna Garg**
